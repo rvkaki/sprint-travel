@@ -32,6 +32,7 @@ const Menu = props => {
       <Box
         ref={dropdownRef}
         position="absolute"
+        zIndex="sticky"
         top={8}
         display={isOpen ? 'inherit' : 'none'}
       >
@@ -49,6 +50,7 @@ const Menu = props => {
               href={item.link ? item.link : ''}
               target={item.target ? item.target : ''}
               fontSize="lg"
+              onClick={item.action ? item.action : () => {}}
               zIndex={2}
               px={2}
               py={1}

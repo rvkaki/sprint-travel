@@ -104,7 +104,7 @@ const Header = props => {
               </Text>
             }
             items={[
-              { label: t('travel.offers') },
+              { label: t('travel.offers'), action: () => history.push('/ofertas') },
               { label: t('travel.destinations') },
             ]}
           />
