@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "offer_groups",
+  "info": {
+    "name": "OfferGroups",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "ofertas": {
+      "collection": "offer"
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

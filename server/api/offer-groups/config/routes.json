@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/offer-groups",
+      "handler": "offer-groups.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/offer-groups/count",
+      "handler": "offer-groups.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/offer-groups/:id",
+      "handler": "offer-groups.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/offer-groups",
+      "handler": "offer-groups.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/offer-groups/:id",
+      "handler": "offer-groups.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/offer-groups/:id",
+      "handler": "offer-groups.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
