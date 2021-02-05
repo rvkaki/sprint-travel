@@ -31,70 +31,84 @@ const CustomDrawer = props => {
             <Stack spacing={5}>
               <Box>
                 <Text fontSize="xl" fontWeight="semibold">
-                  {t('drawer.group.title')}
+                  {t('header.group')}
                 </Text>
                 <Stack ml={3} spacing={1}>
                   <Text
                     as="a"
-                    href=""
+                    href="https://www.sprinttravelrentacar.com"
                     target="_blank"
                     fontSize="md"
                   >
-                    {t('drawer.group.travel')}
+                    {t('group.rent')}
                   </Text>
                   <Text
                     as="a"
-                    href=""
+                    href="https://www.sprinttravelshop.pt"
                     target="_blank"
                     fontSize="md"
                   >
-                    {t('drawer.group.shop')}
+                    {t('group.shop')}
                   </Text>
                   <Text
                     as="a"
-                    href=""
+                    href="https://sprintsolucoesinformaticas.com"
                     target="_blank"
                     fontSize="md"
                   >
-                    {t('drawer.group.tech')}
+                    {t('group.tech')}
                   </Text>
                 </Stack>
               </Box>
               <Box>
                 <Text fontSize="xl" fontWeight="semibold">
-                  {t('drawer.fleet.title')}
+                  {t('header.rent')}
                 </Text>
                 <Stack ml={3} spacing={1}>
-                  <Link to="/frota">{t('drawer.fleet.national')}</Link>
                   <Text
                     as="a"
-                    href=""
+                    href="https://www.sprinttravelrentacar.com"
                     target="_blank"
                     fontSize="md"
                   >
-                    {t('drawer.fleet.international')}
+                    {t('rent.national')}
                   </Text>
+                  <Text
+                    as="a"
+                    href="https://www.rentalcars.com/Home.do?affiliateCode=sprinttra667"
+                    target="_blank"
+                    fontSize="md"
+                  >
+                    {t('rent.international')}
+                  </Text>
+                  <Text
+                    as="a"
+                    href="https://beta.sprintsolucoesinformaticas.com/admin/login"
+                    target="_blank"
+                    fontSize="md"
+                  >
+                    {t('rent.login')}
+                  </Text>
+                </Stack>
+              </Box>
+              <Box>
+                <Text fontSize="xl" fontWeight="semibold">
+                  {t('header.travel')}
+                </Text>
+                <Stack ml={3} spacing={1}>
+                  <Link to="">
+                    <Text fontSize="md">{t('travel.offers')}</Text>
+                  </Link>
+                  <Link to="">
+                    <Text fontSize="md">{t('travel.destinations')}</Text>
+                  </Link>
                 </Stack>
               </Box>
               <Link to="">
                 <Text fontSize="xl" fontWeight="semibold">
-                  {t('drawer.franchise')}
+                  {t('header.franchise')}
                 </Text>
               </Link>
-              <Link to="">
-                <Text fontSize="xl" fontWeight="semibold">
-                  {t('drawer.sale')}
-                </Text>
-              </Link>
-              <Text
-                fontSize="xl"
-                fontWeight="semibold"
-                as="a"
-                href=""
-                target="_blank"
-              >
-                {t('drawer.login')}
-              </Text>
             </Stack>
           </DrawerBody>
           <DrawerFooter>
