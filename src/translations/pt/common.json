@@ -1,0 +1,32 @@
+{
+  "header": {
+    "group": "O Grupo",
+    "franchise": "Franchising",
+    "rent": "Rent a Car",
+    "travel": "Viagens"
+  },
+  "rent": {
+    "national": "Frota Nacional",
+    "international": "Frota Internacional",
+    "login": "Login Agentes"
+  },
+  "travel": {
+    "offers": "Ofertas",
+    "destinations": "Destinos"
+  },
+  "group": {
+    "rent": "Sprint Rent a Car",
+    "shop": "Sprint Travel Shop",
+    "tech": "Sprint Informática"
+  },
+  "footer": {
+    "info": {
+      "title": "Informações Úteis",
+      "privacy": "Política de privacidade",
+      "terms": "Termos e Condições",
+      "complaints": "Livro de reclamações online"
+    },
+    "contacts": "Contactos",
+    "visit": "Visite-nos"
+  }
+}
