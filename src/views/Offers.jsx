@@ -1,5 +1,6 @@
 import { Box, Stack } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import OfferGroup from '../components/OfferGroup';
@@ -7,6 +8,7 @@ import { getOfferGroups } from '../util/apiCalls';
 
 const Offers = () => {
   const [offerGroups, setOfferGroups] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     getOfferGroups().then(data => setOfferGroups(data));
@@ -18,7 +20,7 @@ const Offers = () => {
         <Header />
         <Stack spacing={4} my={8} mx={4} h="100%">
           {offerGroups.map(group => (
-            <OfferGroup {...group} />
+            <OfferGroup {...group} history={history} />
           ))}
         </Stack>
       </Box>

@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "offer_groups",
   "info": {
-    "name": "OfferGroups",
+    "name": "Grupos de Ofertas",
     "description": ""
   },
   "options": {

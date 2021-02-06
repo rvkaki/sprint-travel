@@ -21,3 +21,15 @@ export const getOffers = async () => {
     console.error(error);
   }
 };
+
+export const getOffer = async id => {
+  try {
+    const res = await axios.get(
+      `${process.env.REACT_APP_SERVER_URL}/offers/${id}`
+    );
+    if (res.statusText === 'OK') return res.data;
+    return [];
+  } catch (error) {
+    console.error(error);
+  }
+};

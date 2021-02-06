@@ -15,7 +15,12 @@ const OfferGroup = props => {
         align="center"
       >
         {props.ofertas.map(offer => (
-          <OfferItem {...offer} />
+          <OfferItem
+            {...offer}
+            onClick={() =>
+              props.history.push(`/ofertas/${offer.id}`, { ...offer })
+            }
+          />
         ))}
       </Flex>
     </Box>

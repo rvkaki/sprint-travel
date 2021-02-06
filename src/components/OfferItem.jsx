@@ -13,6 +13,7 @@ const OfferItem = props => {
       my={4}
       position="relative"
       overflow="hidden"
+      onClick={props.onClick}
       _hover={{
         transform: 'scale(1.05)',
         cursor: 'pointer',
