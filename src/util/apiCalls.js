@@ -33,3 +33,13 @@ export const getOffer = async id => {
     console.error(error);
   }
 };
+
+export const getSlides = async () => {
+  try {
+    const res = await axios.get(`${process.env.REACT_APP_SERVER_URL}/carousel`);
+    if (res.statusText === 'OK') return res.data.images;
+    return [];
+  } catch (error) {
+    console.error(error);
+  }
+};
