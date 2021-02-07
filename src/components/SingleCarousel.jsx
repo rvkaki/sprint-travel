@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Box, Flex, IconButton, Spinner } from '@chakra-ui/react';
+import { Flex, IconButton, Spinner } from '@chakra-ui/react';
 import {
   faChevronRight,
   faChevronLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Slide from './Slide';
 
 const CarouselButton = props => {
   return (
@@ -52,15 +53,7 @@ const SingleCarousel = props => {
         label="left"
         onClick={() => handleClick('left')}
       />
-      <Flex dir="row" justify="center" align="center" zIndex="1">
-        <Box
-          as="img"
-          src={props.images[idx].src}
-          boxSize="3xs"
-          objectFit="cover"
-          zIndex="2"
-        />
-      </Flex>
+      <Slide {...props.images[idx]} />
       <CarouselButton
         icon={faChevronRight}
         label="right"
