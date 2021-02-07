@@ -56,6 +56,11 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "videos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "video.video"
     }
   }
 }
