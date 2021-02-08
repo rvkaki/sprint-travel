@@ -3,7 +3,7 @@
     "group": "The Group",
     "franchise": "Franchising",
     "rent": "Rent a Car",
-    "travel": "Viagens"
+    "travel": "Travel"
   },
   "rent": {
     "national": "Portugal Cars",
@@ -16,8 +16,7 @@
   },
   "group": {
     "rent": "Sprint Rent a Car",
-    "shop": "Sprint Travel Shop",
-    "tech": "Sprint Tech"
+    "shop": "Sprint Travel Shop"
   },
   "footer": {
     "info": {
@@ -28,5 +27,29 @@
     },
     "contacts": "Contacts",
     "visit": "Visit us"
-  }
+  },
+  "offer": {
+    "from": "From",
+    "validUntil": "Valid Until",
+    "price": "Price",
+    "date": "Date",
+    "departure": "Departure",
+    "duration": "Duration",
+    "images": "Images",
+    "videos": "Videos",
+    "days": "days"
+  },
+  "franchise": {
+    "info": {
+      "label": "Contact us",
+      "name": "Name",
+      "email": "Email",
+      "contact": "Contact",
+      "area": "Desired zone",
+      "subject": "Subject",
+      "message": "Message",
+      "request": "Submit"
+    }
+  },
+  "share": "Share"
 }

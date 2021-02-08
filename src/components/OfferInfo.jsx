@@ -1,7 +1,9 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
 import Line from './Line';
 
 const OfferInfo = props => {
+  const [t] = useTranslation('common');
   return (
     <Flex
       ml={{ base: 0, lg: 4 }}
@@ -17,7 +19,7 @@ const OfferInfo = props => {
     >
       <Box>
         <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="semibold">
-          Data
+          {t('offer.date')}
         </Text>
         <Line />
         <Text>
@@ -27,33 +29,37 @@ const OfferInfo = props => {
       </Box>
       <Box>
         <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="semibold">
-          Preço
+          {t('offer.price')}
         </Text>
         <Line />
-        <Text>Desde: {props.price}€</Text>
+        <Text>
+          {t('offer.from')}: {props.price}€
+        </Text>
       </Box>
       {props.validUntil ? (
         <Box>
           <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="semibold">
-            Validade
+            {t('offer.validUntil')}
           </Text>
           <Line />
-          <Text>Até: {new Date(props.validUntil).toLocaleDateString()}</Text>
+          <Text>{new Date(props.validUntil).toLocaleDateString()}</Text>
         </Box>
       ) : null}
       <Box>
         <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="semibold">
-          Partida
+          {t('offer.departure')}
         </Text>
         <Line />
         <Text>{props.departure}</Text>
       </Box>
       <Box>
         <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="semibold">
-          Duração
+          {t('offer.duration')}
         </Text>
         <Line />
-        <Text>{props.duration} dias</Text>
+        <Text>
+          {props.duration} {t('offer.days')}
+        </Text>
       </Box>
     </Flex>
   );

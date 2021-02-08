@@ -103,7 +103,7 @@ const Header = props => {
               { label: t('travel.destinations') },
             ]}
           />
-          <Link to="">
+          <Link to="/franchising">
             <Text fontSize="md">{t('header.franchise')}</Text>
           </Link>
         </Flex>

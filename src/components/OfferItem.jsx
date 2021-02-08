@@ -1,8 +1,9 @@
 import { Box, Stack, Text } from '@chakra-ui/react';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const OfferItem = props => {
-  console.log(props);
+  const [t] = useTranslation('common');
   const [isHovered, setIsHovered] = useState(false);
   return (
     <Box
@@ -53,14 +54,14 @@ const OfferItem = props => {
             {props.title}
           </Text>
           <Text fontSize={{ base: 'sm', md: 'md' }}>
-            Desde:
+            {t('offer.from')}:
             <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="semibold">
               {props.price}€
             </Text>
           </Text>
           {props.validUntil ? (
             <Text fontSize={{ base: 'sm', md: 'md' }}>
-              Válido até:
+              {t('offer.validUntil')}:
               <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="semibold">
                 {new Date(props.validUntil).toLocaleDateString()}
               </Text>

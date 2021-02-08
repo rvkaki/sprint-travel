@@ -5,6 +5,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const MediaContainer = props => {
   const [imageTab, setImageTab] = useState(true);
@@ -13,6 +14,8 @@ const MediaContainer = props => {
   const [videoIdx, setVideoIdx] = useState(0);
 
   const [videoLoading, setVideoLoading] = useState(true);
+
+  const [t] = useTranslation('common');
 
   const nextMedia = () => {
     if (imageTab) setImageIdx((imageIdx + 1) % props.images.length);
@@ -149,7 +152,7 @@ const MediaContainer = props => {
             fontWeight={imageTab ? 'semibold' : 'medium'}
             textAlign="center"
           >
-            Imagens
+            {t('offer.images')}
           </Text>
         </Box>
         {props.videos.length > 0 ? (
@@ -171,7 +174,7 @@ const MediaContainer = props => {
               fontWeight={imageTab ? 'medium' : 'semibold'}
               textAlign="center"
             >
-              Vídeos
+              {t('offer.videos')}
             </Text>
           </Box>
         ) : null}

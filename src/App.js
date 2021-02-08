@@ -6,6 +6,7 @@ import common_en from './translations/en/common.json';
 import common_pt from './translations/pt/common.json';
 import { I18nextProvider } from 'react-i18next';
 import Root from './routes/Root';
+import GlobalModal from './components/GlobalModal';
 
 const theme = extendTheme({
   fonts: {
@@ -53,6 +54,7 @@ const App = () => {
     <ChakraProvider theme={theme}>
       <I18nextProvider i18n={i18next}>
         <Root />
+        <GlobalModal ref={ref => (global['modal'] = ref)} />
       </I18nextProvider>
     </ChakraProvider>
   );

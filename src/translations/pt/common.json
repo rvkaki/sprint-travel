@@ -16,8 +16,7 @@
   },
   "group": {
     "rent": "Sprint Rent a Car",
-    "shop": "Sprint Travel Shop",
-    "tech": "Sprint Informática"
+    "shop": "Sprint Travel Shop"
   },
   "footer": {
     "info": {
@@ -28,5 +27,29 @@
     },
     "contacts": "Contactos",
     "visit": "Visite-nos"
-  }
+  },
+  "offer": {
+    "from": "Desde",
+    "validUntil": "Valido até",
+    "price": "Preço",
+    "date": "Data",
+    "departure": "Partida",
+    "duration": "Duração",
+    "images": "Imagens",
+    "videos": "Vídeos",
+    "days": "dias"
+  },
+  "franchise": {
+    "info": {
+      "label": "Entre em contacto",
+      "name": "Nome",
+      "email": "Email",
+      "contact": "Contacto",
+      "area": "Zona pretendida",
+      "subject": "Assunto",
+      "message": "Mensagem",
+      "request": "Submeter"
+    }
+  },
+  "share": "Partilhar"
 }
