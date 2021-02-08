@@ -1,5 +1,5 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
-import Line from "./Line";
+import { Box, Flex, Text } from '@chakra-ui/react';
+import Line from './Line';
 
 const OfferInfo = props => {
   return (
@@ -32,13 +32,15 @@ const OfferInfo = props => {
         <Line />
         <Text>Desde: {props.price}€</Text>
       </Box>
-      <Box>
-        <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="semibold">
-          Validade
-        </Text>
-        <Line />
-        <Text>Até: {new Date(props.validUntil).toLocaleDateString()}</Text>
-      </Box>
+      {props.validUntil ? (
+        <Box>
+          <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="semibold">
+            Validade
+          </Text>
+          <Line />
+          <Text>Até: {new Date(props.validUntil).toLocaleDateString()}</Text>
+        </Box>
+      ) : null}
       <Box>
         <Text fontSize={{ base: 'lg', md: 'xl' }} fontWeight="semibold">
           Partida

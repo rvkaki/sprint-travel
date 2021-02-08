@@ -39,6 +39,9 @@ const MediaContainer = props => {
         overflow="hidden"
         borderWidth="3px"
         borderTopLeftRadius={{ base: '20px', md: '40px' }}
+        borderBottomRightRadius={
+          props.videos.length === 0 ? { base: '20px', md: '40px' } : '0px'
+        }
         borderColor="gray.800"
         position="relative"
       >

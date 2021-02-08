@@ -64,12 +64,7 @@ const Header = props => {
                 label: t('group.shop'),
                 link: 'https://www.sprinttravelshop.pt',
                 target: '_blank',
-              },
-              {
-                label: t('group.tech'),
-                link: 'https://sprintsolucoesinformaticas.com',
-                target: '_blank',
-              },
+              }
             ]}
           />
           <Menu

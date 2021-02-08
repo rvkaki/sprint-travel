@@ -58,12 +58,14 @@ const OfferItem = props => {
               {props.price}€
             </Text>
           </Text>
-          <Text fontSize={{ base: 'sm', md: 'md' }}>
-            Válido até:
-            <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="semibold">
-              {new Date(props.validUntil).toLocaleDateString()}
+          {props.validUntil ? (
+            <Text fontSize={{ base: 'sm', md: 'md' }}>
+              Válido até:
+              <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="semibold">
+                {new Date(props.validUntil).toLocaleDateString()}
+              </Text>
             </Text>
-          </Text>
+          ) : null}
         </Stack>
       </Box>
     </Box>

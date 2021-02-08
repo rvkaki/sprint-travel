@@ -18,7 +18,7 @@ const Offers = () => {
     <Box>
       <Box minH="100vh">
         <Header />
-        <Stack spacing={4} my={8} mx={4} h="100%">
+        <Stack spacing={16} my={8} mx={4} h="100%">
           {offerGroups.map(group => (
             <OfferGroup {...group} history={history} />
           ))}
