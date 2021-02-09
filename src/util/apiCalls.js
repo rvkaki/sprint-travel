@@ -60,3 +60,13 @@ export const getHighlights = async () => {
     console.error(error);
   }
 };
+
+export const getLocations = async () => {
+  try {
+    const res = await axios.get(`${serverURL}/locations`);
+    if (res.statusText === 'OK') return res.data;
+    return [];
+  } catch (error) {
+    console.error(error);
+  }
+};

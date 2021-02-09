@@ -3,7 +3,8 @@
     "group": "The Group",
     "franchise": "Franchising",
     "rent": "Rent a Car",
-    "travel": "Offers"
+    "travel": "Offers",
+    "contacts": "Contacts"
   },
   "rent": {
     "national": "Portugal Cars",
@@ -47,5 +48,6 @@
       "request": "Submit"
     }
   },
-  "share": "Share"
+  "share": "Share",
+  "locations": "Find Us"
 }

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "locations",
+  "info": {
+    "name": "Localizações",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "emails": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.email"
+    },
+    "numbers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.number"
+    }
+  }
+}

@@ -64,7 +64,7 @@ const Header = props => {
                 label: t('group.shop'),
                 link: 'https://www.sprinttravelshop.pt',
                 target: '_blank',
-              }
+              },
             ]}
           />
           <Menu
@@ -97,6 +97,9 @@ const Header = props => {
           </Link>
           <Link to="/franchising">
             <Text fontSize="md">{t('header.franchise')}</Text>
+          </Link>
+          <Link to="/contactos">
+            <Text fontSize="md">{t('header.contacts')}</Text>
           </Link>
         </Flex>
         <Flex dir="row" justify="flex-end">
