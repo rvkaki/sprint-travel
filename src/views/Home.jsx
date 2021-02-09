@@ -16,12 +16,11 @@ const Home = () => {
 
   return (
     <Box>
-      <Box minH="100vh">
+      <Box minH="100vh" overflow="hidden">
         <Header />
         <Flex
           w="100%"
-          mt={8}
-          h={{ base: '90vh', md: '50vh' }}
+          mt={6}
           direction="column"
           align="center"
         >

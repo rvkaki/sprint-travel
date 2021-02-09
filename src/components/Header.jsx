@@ -92,17 +92,9 @@ const Header = props => {
               },
             ]}
           />
-          <Menu
-            label={
-              <Text as="button" fontSize="md">
-                {t('header.travel')}
-              </Text>
-            }
-            items={[
-              { label: t('travel.offers'), action: () => history.push('/ofertas') },
-              { label: t('travel.destinations') },
-            ]}
-          />
+          <Link to="/ofertas">
+            <Text fontSize="md">{t('header.travel')}</Text>
+          </Link>
           <Link to="/franchising">
             <Text fontSize="md">{t('header.franchise')}</Text>
           </Link>

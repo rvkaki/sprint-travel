@@ -8,8 +8,8 @@ const Slide = props => {
         src={props.src}
         alt={props.alt}
         objectFit="cover"
-        h={{ base: '150px', sm: '300px' }}
-        w="600px"
+        h={{ base: '150px', sm: '300px', md: '400px', lg: '450px' }}
+        w="900px"
       />
       <Flex
         position="absolute"

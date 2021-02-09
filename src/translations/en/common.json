@@ -3,16 +3,12 @@
     "group": "The Group",
     "franchise": "Franchising",
     "rent": "Rent a Car",
-    "travel": "Travel"
+    "travel": "Offers"
   },
   "rent": {
     "national": "Portugal Cars",
     "international": "International Cars",
     "login": "Agent Login"
-  },
-  "travel": {
-    "offers": "Offers",
-    "destinations": "Destinations"
   },
   "group": {
     "rent": "Sprint Rent a Car",

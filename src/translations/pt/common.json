@@ -3,16 +3,12 @@
     "group": "O Grupo",
     "franchise": "Franchising",
     "rent": "Rent a Car",
-    "travel": "Viagens"
+    "travel": "Promoções"
   },
   "rent": {
     "national": "Frota Nacional",
     "international": "Frota Internacional",
     "login": "Login Agentes"
-  },
-  "travel": {
-    "offers": "Ofertas",
-    "destinations": "Destinos"
   },
   "group": {
     "rent": "Sprint Rent a Car",
