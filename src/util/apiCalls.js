@@ -50,3 +50,13 @@ export const getFranchisingBook = async () => {
     console.log(error);
   }
 };
+
+export const getHighlights = async () => {
+  try {
+    const res = await axios.get(`${serverURL}/highlights`);
+    if (res.statusText === 'OK') return res.data.ofertas;
+    return [];
+  } catch (error) {
+    console.error(error);
+  }
+};
