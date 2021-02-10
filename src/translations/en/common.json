@@ -34,7 +34,8 @@
     "duration": "Duration",
     "images": "Images",
     "videos": "Videos",
-    "days": "days"
+    "days": "days",
+    "regime": "Regime"
   },
   "franchise": {
     "info": {
