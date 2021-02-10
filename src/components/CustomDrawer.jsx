@@ -50,14 +50,6 @@ const CustomDrawer = props => {
                   >
                     {t('group.shop')}
                   </Text>
-                  <Text
-                    as="a"
-                    href="https://sprintsolucoesinformaticas.com"
-                    target="_blank"
-                    fontSize="md"
-                  >
-                    {t('group.tech')}
-                  </Text>
                 </Stack>
               </Box>
               <Box>
@@ -91,22 +83,19 @@ const CustomDrawer = props => {
                   </Text>
                 </Stack>
               </Box>
-              <Box>
+              <Link to="/ofertas">
                 <Text fontSize="xl" fontWeight="semibold">
                   {t('header.travel')}
                 </Text>
-                <Stack ml={3} spacing={1}>
-                  <Link to="">
-                    <Text fontSize="md">{t('travel.offers')}</Text>
-                  </Link>
-                  <Link to="">
-                    <Text fontSize="md">{t('travel.destinations')}</Text>
-                  </Link>
-                </Stack>
-              </Box>
-              <Link to="">
+              </Link>
+              <Link to="/franchising">
                 <Text fontSize="xl" fontWeight="semibold">
                   {t('header.franchise')}
+                </Text>
+              </Link>
+              <Link to="/contactos">
+                <Text fontSize="xl" fontWeight="semibold">
+                  {t('header.contacts')}
                 </Text>
               </Link>
             </Stack>
