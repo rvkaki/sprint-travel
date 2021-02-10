@@ -8,8 +8,8 @@ const OfferItem = props => {
   return (
     <Box
       w="30%"
-      minW={{ base: '100%', sm: '80%', md: '60%', lg: '400px' }}
-      h="100%"
+      minW={{ base: '90%', sm: '80%', md: '60%', lg: '400px' }}
+      h={{ base: '180px', md: '250px' }}
       mx={4}
       my={4}
       position="relative"

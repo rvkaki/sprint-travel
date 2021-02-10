@@ -129,7 +129,7 @@ const Franchising = props => {
                 justify="center"
                 href={`${process.env.REACT_APP_SERVER_URL}${book}`}
                 target="_blank"
-                bg="gray.800"
+                bg="yellow.500"
                 borderRadius="50%"
                 color="white"
                 fontSize={{ base: 'md', md: 'xl' }}
@@ -137,7 +137,7 @@ const Franchising = props => {
                 shadow="lg"
                 transition="ease-in-out 0.2s"
                 _hover={{
-                  bg: 'gray.900',
+                  bg: 'yellow.900',
                   transform: 'scale(1.03)',
                   shadow: '2xl',
                 }}

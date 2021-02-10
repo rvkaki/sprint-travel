@@ -8,7 +8,6 @@ const OfferGroup = props => {
         {props.title}
       </Text>
       <Flex
-        h={{ base: '180px', md: '250px' }}
         direction="row"
         flexWrap="wrap"
         align="center"
