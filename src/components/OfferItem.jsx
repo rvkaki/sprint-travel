@@ -1,4 +1,4 @@
-import { Box, Stack, Text } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -15,6 +15,8 @@ const OfferItem = props => {
       position="relative"
       overflow="hidden"
       onClick={props.onClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       _hover={{
         transform: 'scale(1.05)',
         cursor: 'pointer',
@@ -25,50 +27,60 @@ const OfferItem = props => {
         as="img"
         src={`${process.env.REACT_APP_SERVER_URL}${props.coverImage.url}`}
         alt={props.coverImage.name}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
         objectFit="cover"
         w="100%"
         h="100%"
       />
-      <Box
-        transform="skew(-15deg)"
+      <Flex
         position="absolute"
         top={0}
-        left={-12}
-        bg="gray.800"
+        left={isHovered ? 0 : '-100%'}
+        bg="#42424299"
         h="100%"
-        w={isHovered ? '0px' : { base: '70%', md: '60%' }}
+        w="100%"
         transition="ease-in-out 0.5s"
+        color="white"
+        direction="column"
+        justify="center"
+        p={4}
+        fontSize="lg"
       >
-        <Stack
-          visibility={isHovered ? 'hidden' : 'visible'}
-          ml={12}
-          py={{ base: 4, md: 8 }}
-          px={{ base: 2, md: 4 }}
-          transform="skew(15deg)"
-          color={isHovered ? 'transparent' : 'white'}
-          transition="visibility ease-out 0.1s, color step-end 0.4s"
+        <Text>
+          {t('offer.duration')}: {props.duration} {t('offer.days')}
+        </Text>
+        <Text>
+          {t('offer.validUntil')}:{' '}
+          {new Date(props.validUntil).toLocaleDateString()}
+        </Text>
+        <Text>
+          {t('offer.departure')}: {props.departure}
+        </Text>
+      </Flex>
+      <Flex
+        direction="column"
+        justify="space-between"
+        h="100%"
+        w="100%"
+        position="absolute"
+        bg="rgba(0,0,0,0.1)"
+        transition="ease-in-out 0.5s"
+        top={0}
+        left={0}
+        p={4}
+        color="white"
+      >
+        <Text fontSize="3xl" fontWeight="semibold" color="white">
+          {props.title}
+        </Text>
+        <Text
+          fontSize="3xl"
+          fontWeight="semibold"
+          color="white"
+          textAlign="right"
         >
-          <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="semibold">
-            {props.title}
-          </Text>
-          <Text fontSize={{ base: 'sm', md: 'md' }}>
-            {t('offer.from')}:
-            <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="semibold">
-              {props.price}€
-            </Text>
-          </Text>
-          {props.validUntil ? (
-            <Text fontSize={{ base: 'sm', md: 'md' }}>
-              {t('offer.validUntil')}:
-              <Text fontSize={{ base: 'md', md: 'xl' }} fontWeight="semibold">
-                {new Date(props.validUntil).toLocaleDateString()}
-              </Text>
-            </Text>
-          ) : null}
-        </Stack>
-      </Box>
+          {props.price}€
+        </Text>
+      </Flex>
     </Box>
   );
 };
