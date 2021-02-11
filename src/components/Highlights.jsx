@@ -6,8 +6,14 @@ const Highlights = props => {
   const history = useHistory();
   return (
     <Box w="90%" mx="auto" my={16}>
-      <Text fontSize="3xl" fontWeight="semibold" color="gray.900" mb={2}>
-        Destaques:
+      <Text
+        fontSize={{base: "3xl", md: "5xl"}}
+        fontWeight="semibold"
+        textAlign="center"
+        color="gray.900"
+        mb={2}
+      >
+        Destaques
       </Text>
       <Flex dir="row" w="100%" flexWrap="wrap">
         {props.data.map(h => (

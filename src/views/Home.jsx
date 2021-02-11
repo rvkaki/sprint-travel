@@ -6,7 +6,7 @@ import { getHighlights, getSlides } from '../util/apiCalls';
 import SingleCarousel from '../components/SingleCarousel';
 import { Carousel } from '../components/Carousel3D';
 import Slide from '../components/Slide';
-import MainSearch from '../components/MainSearch';
+import MainSearch from '../components/MainNav';
 import Highlights from '../components/Highlights';
 
 const Home = () => {
