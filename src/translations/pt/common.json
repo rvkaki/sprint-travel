@@ -53,7 +53,17 @@
   "share": "Partilhar",
   "locations": "Onde estamos",
   "search": {
+    "label": "Categoria",
     "placeholder": "Selecionar Categoria",
     "button": "Pesquisar"
-  }
+  },
+  "sort": {
+    "label": "Ordenar",
+    "placeholder": "Ordenar por",
+    "category": "Categoria",
+    "price": "Preço",
+    "validity": "Validade",
+    "duration": "Duração"
+  },
+  "all": "Todos"
 }

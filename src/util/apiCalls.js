@@ -2,9 +2,14 @@ import axios from 'axios';
 
 const serverURL = process.env.REACT_APP_SERVER_URL;
 
-export const getOfferGroups = async () => {
+export const getOfferGroups = async (categoryId = -1) => {
+  let params = {};
+  if (categoryId !== -1) params['id'] = categoryId;
+
   try {
-    const res = await axios.get(`${serverURL}/offer-groups`);
+    const res = await axios.get(`${serverURL}/offer-groups`, {
+      params: params,
+    });
     if (res.statusText === 'OK') return res.data;
     return [];
   } catch (error) {
@@ -12,9 +17,11 @@ export const getOfferGroups = async () => {
   }
 };
 
-export const getOffers = async () => {
+export const getOffers = async (sortBy = '') => {
+  let params = {};
+  if (sortBy !== '') params['_sort'] = sortBy;
   try {
-    const res = await axios.get(`${serverURL}/offers`);
+    const res = await axios.get(`${serverURL}/offers`, { params: params });
     if (res.statusText === 'OK') return res.data;
     return [];
   } catch (error) {

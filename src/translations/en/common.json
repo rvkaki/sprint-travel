@@ -53,7 +53,17 @@
   "share": "Share",
   "locations": "Find Us",
   "search": {
+    "label": "Category",
     "placeholder": "Select Category",
     "button": "Search"
-  }
+  },
+  "sort": {
+    "label": "Sort",
+    "placeholder": "Sort By",
+    "category": "Category",
+    "price": "Price",
+    "validity": "Validity",
+    "duration": "Duration"
+  },
+  "all": "All"
 }
