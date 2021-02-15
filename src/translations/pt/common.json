@@ -51,5 +51,9 @@
     }
   },
   "share": "Partilhar",
-  "locations": "Onde estamos"
+  "locations": "Onde estamos",
+  "search": {
+    "placeholder": "Selecionar Categoria",
+    "button": "Pesquisar"
+  }
 }

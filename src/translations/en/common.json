@@ -51,5 +51,9 @@
     }
   },
   "share": "Share",
-  "locations": "Find Us"
+  "locations": "Find Us",
+  "search": {
+    "placeholder": "Select Category",
+    "button": "Search"
+  }
 }
