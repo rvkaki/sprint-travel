@@ -1,19 +1,43 @@
 import { Box, Stack, Text } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next';
+import { regimes } from '../util/constants';
 
 const OrderInfo = props => {
+  const [t, i18n] = useTranslation('common');
   return (
-    <Box bg="gray.200" w="100%" h="100%">
+    <Box bg="gray.200" w="100%" h="100%" shadow="xl">
       <Box
         as="img"
         src={`${process.env.REACT_APP_SERVER_URL}${props.coverImage.url}`}
         alt={props.coverImage.name}
         objectFit="cover"
       />
-      <Stack spacing={1}>
-        <Text>{props.title}</Text>
-        <Text>{props.duration}</Text>
-        <Text>{props.regime}</Text>
-        <Text>{props.price}</Text>
+      <Stack spacing={4} p={4} color="gray.900">
+        <Box>
+          <Text fontWeight="semibold" fontSize="lg">
+            {t('offer.destination')}
+          </Text>
+          <Text fontSize="xl">{props.title}</Text>
+        </Box>
+        <Box>
+          <Text fontWeight="semibold" fontSize="lg">
+            {t('offer.duration')}
+          </Text>
+          <Text fontSize="xl">
+            {props.duration} {t('offer.days')}
+          </Text>
+        </Box>
+        <Box>
+          <Text fontWeight="semibold" fontSize="lg">
+            {t('offer.regime')}
+          </Text>
+          <Text fontSize="xl">
+            {props.regime} - {regimes[props.regime][i18n.language]}
+          </Text>
+        </Box>
+        <Text alignSelf="flex-end" fontSize="4xl">
+          {props.price}€
+        </Text>
       </Stack>
     </Box>
   );

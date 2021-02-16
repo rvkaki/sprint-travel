@@ -29,6 +29,7 @@
   "offer": {
     "from": "Desde",
     "validUntil": "Valido até",
+    "destination": "Destino",
     "price": "Preço",
     "date": "Data",
     "departure": "Partida",

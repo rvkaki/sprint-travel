@@ -29,6 +29,7 @@
   "offer": {
     "from": "From",
     "validUntil": "Valid Until",
+    "destination": "Destination",
     "price": "Price",
     "date": "Date",
     "departure": "Departure",
