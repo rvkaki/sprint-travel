@@ -5,8 +5,17 @@ import SearchBar from './SearchBar';
 const OffersNavBar = props => {
   const [t] = useTranslation('common');
   return (
-    <Flex m={8} justify="space-between">
-      <Box px={8} py={4} h={32} bg="gray.800">
+    <Flex
+      my={8}
+      mx="auto"
+      px={6}
+      pb={6}
+      pt={4}
+      w="50%"
+      bg="gray.800"
+      borderRadius="lg"
+    >
+      <Box flex={2} mr={2}>
         <SearchBar
           options={props.options}
           onChange={props.onChangeCategory}
@@ -16,7 +25,7 @@ const OffersNavBar = props => {
           label={t('search.label')}
         />
       </Box>
-      <Box px={8} py={4} h={32} bg="gray.800">
+      <Box flex={1} ml={2}>
         <SearchBar
           options={props.sorters}
           value={props.sortBy}

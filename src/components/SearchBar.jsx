@@ -5,7 +5,7 @@ import './SearchBar.css';
 
 const SearchBar = props => {
   return (
-    <Stack spacing={1}>
+    <Stack spacing={1} w={props.width}>
       <Text color={props.color} fontWeight="medium">
         {props.label}
       </Text>
