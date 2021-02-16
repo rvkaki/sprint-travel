@@ -84,8 +84,16 @@ const UserForm = props => {
           onChange={e => setContact(e.target.value)}
         />
       </FormControl>
-      <Flex align="center" justify="space-between">
-        <Stack spacing={1}>
+      <Flex
+        direction={{ base: 'column', sm: 'row' }}
+        align={{ base: 'flex-start', sm: 'center' }}
+        justify="space-between"
+      >
+        <Stack
+          spacing={1}
+          mb={{ base: 6, sm: 0 }}
+          w={{ base: '100%', sm: 'auto' }}
+        >
           <Text color="gray.800" fontWeight="medium">
             {t('checkout.info.date')}
           </Text>
@@ -95,7 +103,7 @@ const UserForm = props => {
             onDateChange={newDate => setDepartureDate(newDate.startDate)}
           />
         </Stack>
-        <Box>
+        <Box w={{ base: '100%', sm: 'auto' }}>
           <SearchBar
             options={props.departureOptions}
             value={departure}

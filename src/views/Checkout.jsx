@@ -28,8 +28,8 @@ const Checkout = () => {
     <Box>
       <Box minH="100vh">
         <Header />
-        <Flex m={8}>
-          <Box flex={2} px={{ base: 4, md: 8 }}>
+        <Flex direction={{ base: 'column', lg: 'row' }} m={{ base: 4, lg: 8 }}>
+          <Box flex={2} px={{ base: 0, md: 8 }} mb={{ base: 8, lg: 0 }}>
             <Text fontSize="2xl" fontWeight="semibold" color="black">
               {t('checkout.info.label')}
             </Text>
