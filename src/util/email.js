@@ -2,23 +2,17 @@ export const sendOrderEmail = async (
   name,
   email,
   contact,
-  carInfo,
-  startDate,
-  endDate,
-  pickup,
-  delivery,
-  numDays
+  departure,
+  date,
+  offer
 ) => {
   const messageBody = `Nome: ${name}
 Email: ${email}
 Contacto: ${contact}
-Carro: ${carInfo.brand} ${carInfo.model}
-Data: ${startDate.toLocaleDateString()} - ${endDate.toLocaleDateString()}
-Recolha: ${pickup.title}
-Entrega: ${delivery.title}
-Total: ${numDays} x ${carInfo.price}€ = ${numDays * carInfo.price}€`;
-
-  const emailTo = pickup.emails[0].email;
+Destino: ${offer.title}
+Data: ${date.toLocaleDateString()}
+Partida: ${departure}
+Total: ${offer.price}€`;
 
   const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/email`, {
     method: 'POST',

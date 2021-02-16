@@ -6,28 +6,53 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import OrderInfo from '../components/OrderInfo';
 import UserForm from '../components/UserForm';
+import Loader from '../components/Loader';
 import { getOffer } from '../util/apiCalls';
+import { sendOrderEmail } from '../util/email';
 
 const Checkout = () => {
   const location = useLocation();
   const id = parseInt(location.search.split('?offer=')[1]);
 
   const [t] = useTranslation('common');
+  const modal = global['modal'];
 
   const [offer, setOffer] = useState();
+
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     getOffer(id).then(data => setOffer(data));
   }, [id]);
 
   const submit = (name, email, contact, departure, date) => {
-    console.log(name, email, contact, departure, date.toLocaleDateString());
+    setLoading(true);
+    sendOrderEmail(name, email, contact, departure, date, offer)
+      .then(res => {
+        console.log(res);
+        setLoading(false);
+        if (res.ok)
+          modal.open(t('checkout.order.requested'), t('checkout.order.text'));
+        else
+          modal.open(
+            t('checkout.order.error.label'),
+            t('checkout.order.error.text') + 'geral@sprinttravelviagens.com'
+          );
+      })
+      .catch(error => {
+        console.log(error);
+        modal.open(
+          t('checkout.order.error.label'),
+          t('checkout.order.error.text') + 'geral@sprinttravelviagens.com'
+        );
+      });
   };
 
   return (
     <Box>
       <Box minH="100vh">
         <Header />
+        <Loader loading={loading} />
         <Flex direction={{ base: 'column', lg: 'row' }} m={{ base: 4, lg: 8 }}>
           <Box flex={2} px={{ base: 0, md: 8 }} mb={{ base: 8, lg: 0 }}>
             <Text fontSize="2xl" fontWeight="semibold" color="black">
