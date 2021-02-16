@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Checkout from '../views/Checkout';
 import Contacts from '../views/Contacts';
 import Franchising from '../views/Franchising';
 import Home from '../views/Home';
@@ -21,6 +22,9 @@ const Root = () => {
         </Route>
         <Route exact path="/contactos">
           <Contacts />
+        </Route>
+        <Route exact path="/checkout">
+          <Checkout />
         </Route>
         <Route path="/">
           <Home />

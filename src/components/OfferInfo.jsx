@@ -120,6 +120,7 @@ const OfferInfo = props => {
           py={1}
           color="white"
           fontWeight="semibold"
+          onClick={props.checkout}
         >
           Reservar
         </Box>

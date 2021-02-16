@@ -65,5 +65,33 @@
     "validity": "Validity",
     "duration": "Duration"
   },
-  "all": "All"
+  "all": "All",
+  "checkout": {
+    "info": {
+      "label": "Identification",
+      "name": "Name",
+      "email": "Email",
+      "contact": "Contact",
+      "accept": "I accept the",
+      "terms": "Terms & Conditions",
+      "request": "Request",
+      "confirmation": "Subject to confirmation",
+      "date": "Departure Date",
+      "location": "Departure Location"
+    },
+    "order": {
+      "label": "Your order",
+      "price": "Price",
+      "requested": "Request submitted",
+      "text": "Thank you for your preference! We are reviewing your request, please await the contact of our services.",
+      "error": {
+        "label": "Oops, something went wrong",
+        "text": "We couldn't process your order. Please try again later or contact us directly at "
+      }
+    }
+  },
+  "datepicker": {
+    "placeholder": "Select Date",
+    "redo": "Redo"
+  }
 }

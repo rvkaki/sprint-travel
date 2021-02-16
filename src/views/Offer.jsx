@@ -1,6 +1,6 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useHistory, useLocation, useParams } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import MediaContainer from '../components/MediaContainer';
@@ -10,6 +10,7 @@ import { getOffer } from '../util/apiCalls';
 const Offer = () => {
   const { id } = useParams();
   const { state } = useLocation();
+  const history = useHistory();
 
   const [offer, setOffer] = useState();
 
@@ -48,7 +49,10 @@ const Offer = () => {
                 return { src: v.url, alt: v.id };
               })}
             />
-            <OfferInfo {...offer} />
+            <OfferInfo
+              {...offer}
+              checkout={() => history.push(`/checkout?offer=${id}`)}
+            />
           </Flex>
         </Box>
       </Box>
