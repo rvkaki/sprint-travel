@@ -15,7 +15,20 @@
     "rent": "Sprint Rent a Car",
     "shop": "Sprint Travel Shop"
   },
-  "online": "Agência Online",
+  "online": {
+    "label": "Agência Online",
+    "packages": "Pacotes",
+    "trips": "Grandes Viagens",
+    "cruises": "Cruzeiros",
+    "escapades": "Escapadas",
+    "flights": "Voos",
+    "hotels": "Hotéis",
+    "flight+hotel": "Voo+Hotel",
+    "destinations": "Destinos",
+    "honeymoon": "Lua de Mel",
+    "transfers": "Transfers"
+  },
+  "highlights": "Destaques",
   "footer": {
     "info": {
       "title": "Informações Úteis",
@@ -37,7 +50,9 @@
     "images": "Imagens",
     "videos": "Vídeos",
     "days": "dias",
-    "regime": "Regime"
+    "regime": "Regime",
+    "pdf": "Ver PDF",
+    "order": "Reservar"
   },
   "franchise": {
     "info": {

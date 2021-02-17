@@ -91,7 +91,7 @@ const OfferInfo = props => {
             color="gray.800"
             fontWeight="semibold"
           >
-            Ver PDF
+            {t('offer.pdf')}
           </Box>
         ) : null}
         <Box
@@ -104,7 +104,7 @@ const OfferInfo = props => {
           fontWeight="semibold"
           onClick={props.checkout}
         >
-          Reservar
+          {t('offer.order')}
         </Box>
       </Flex>
     </Flex>

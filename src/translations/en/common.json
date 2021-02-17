@@ -15,7 +15,20 @@
     "rent": "Sprint Rent a Car",
     "shop": "Sprint Travel Shop"
   },
-  "online": "Online Agency",
+  "online": {
+    "label": "Online Agency",
+    "packages": "Packages",
+    "trips": "Big Trips",
+    "cruises": "Cruises",
+    "escapades": "Escapades",
+    "flights": "Flights",
+    "hotels": "Hotels",
+    "flight+hotel": "Flight+Hotel",
+    "destinations": "Destinations",
+    "honeymoon": "Honeymoon",
+    "transfers": "Transfers"
+  },
+  "highlights": "Highlights",
   "footer": {
     "info": {
       "title": "Informations",
@@ -37,7 +50,9 @@
     "images": "Images",
     "videos": "Videos",
     "days": "days",
-    "regime": "Regime"
+    "regime": "Regime",
+    "pdf": "See PDF",
+    "order": "Order"
   },
   "franchise": {
     "info": {

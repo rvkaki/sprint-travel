@@ -16,54 +16,54 @@ import { useTranslation } from 'react-i18next';
 
 const items = [
   {
-    label: 'Pacotes',
+    label: 'packages',
     link: 'https://sprinttravelviagens.traveltool.pt/viagem/',
     icon: faSuitcase,
   },
   {
-    label: 'Grandes Viagens',
+    label: 'trips',
     link: 'https://sprinttravelviagens.traveltool.pt/grandes-viagens/',
     icon: faGlobeAfrica,
   },
   {
-    label: 'Cruzeiros',
+    label: 'cruises',
     link: 'https://sprinttravelviagens.traveltool.pt/cruisesshowcase/',
     icon: faShip,
   },
   {
-    label: 'Escapadas',
+    label: 'escapades',
     link: 'https://sprinttravelviagens.traveltool.pt/escapadinhas/',
     icon: faUmbrellaBeach,
   },
   {
-    label: 'Voos',
+    label: 'flights',
     link: 'https://sprinttravelviagens.traveltool.pt/voos/',
     icon: faPlane,
   },
   {
-    label: 'Hoteis',
+    label: 'hotels',
     link: 'https://sprinttravelviagens.traveltool.pt/hotelsshowcase',
     icon: faHotel,
   },
   {
-    label: 'Voo+Hotel',
+    label: 'flight+hotel',
     link: 'https://sprinttravelviagens.traveltool.pt/voo-hotel/',
     icon: faPlaneDeparture,
   },
   {
-    label: 'Destinos',
+    label: 'destinations',
     link:
       'https://sprinttravelviagens.traveltool.pt/destinationsshowcase/destinations',
     icon: faMap,
   },
   {
-    label: 'Lua de Mel',
+    label: 'honeymoon',
     link:
       'https://sprinttravelviagens.traveltool.pt/grandes-viagens/lua-de-mel/',
     icon: faHeart,
   },
   {
-    label: 'Transfers',
+    label: 'transfers',
     link: 'https://sprinttravelviagens.traveltool.pt/transfersshowcase/',
     icon: faBus,
   },
@@ -94,7 +94,7 @@ const NavButton = props => {
         <FontAwesomeIcon icon={props.icon} size="lg" />
       </Box>
       <Text fontSize={{ base: 'md', md: 'xl' }} ml={4}>
-        {props.label}
+        {props.t(`online.${props.label}`)}
       </Text>
     </Flex>
   );
@@ -111,7 +111,7 @@ const MainNav = props => {
         fontWeight="semibold"
         mb={2}
       >
-        {t('online')}
+        {t('online.label')}
       </Text>
       <Flex
         mx="auto"
@@ -124,7 +124,7 @@ const MainNav = props => {
         overflow="hidden"
       >
         {items.map((i, idx) => (
-          <NavButton key={idx} {...i} />
+          <NavButton key={idx} t={t} {...i} />
         ))}
       </Flex>
     </Box>
