@@ -48,10 +48,12 @@ const OfferItem = props => {
         <Text>
           {t('offer.duration')}: {props.duration} {t('offer.days')}
         </Text>
-        <Text>
-          {t('offer.validUntil')}:{' '}
-          {new Date(props.validUntil).toLocaleDateString()}
-        </Text>
+        {props.validUntil ? (
+          <Text>
+            {t('offer.validUntil')}:{' '}
+            {new Date(props.validUntil).toLocaleDateString()}
+          </Text>
+        ) : null}
         <Text>
           {t('offer.departure')}: {props.departure}
         </Text>

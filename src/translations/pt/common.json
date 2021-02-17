@@ -64,7 +64,8 @@
       "subject": "Assunto",
       "message": "Mensagem",
       "request": "Submeter"
-    }
+    },
+    "catalog": "Catálogo"
   },
   "share": "Enviar a um amigo",
   "locations": "Onde estamos",
