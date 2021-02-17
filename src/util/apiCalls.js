@@ -77,3 +77,23 @@ export const getLocations = async () => {
     console.error(error);
   }
 };
+
+export const getPrivacyPolicy = async () => {
+  try {
+    const res = await axios.get(`${serverURL}/privacy`);
+    if (res.statusText === 'OK') return res.data.text;
+    return '';
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getSaleConditions = async () => {
+  try {
+    const res = await axios.get(`${serverURL}/sale-conditions`);
+    if (res.statusText === 'OK') return res.data.text;
+    return '';
+  } catch (error) {
+    console.error(error);
+  }
+};

@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "sale_conditions",
+  "info": {
+    "name": "Condições Gerais de Venda",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

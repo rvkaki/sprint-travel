@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Flex, HStack, Stack, Text } from '@chakra-ui/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -11,9 +11,20 @@ import {
   faInstagram,
 } from '@fortawesome/free-brands-svg-icons';
 import { useTranslation } from 'react-i18next';
+import { getPrivacyPolicy, getSaleConditions } from '../util/apiCalls';
 
 const Footer = props => {
   const [t] = useTranslation('common');
+  const modal = global['modal'];
+
+  const [policy, setPolicy] = useState('');
+  const [conditions, setConditions] = useState('');
+
+  useEffect(() => {
+    getPrivacyPolicy().then(data => setPolicy(data));
+    getSaleConditions().then(data => setConditions(data));
+  }, []);
+
 
   return (
     <Flex
@@ -39,6 +50,7 @@ const Footer = props => {
           _hover={{
             cursor: 'pointer',
           }}
+          onClick={() => modal.open(t('footer.info.privacy'), policy)}
         >
           {t('footer.info.privacy')}
         </Text>
@@ -48,8 +60,9 @@ const Footer = props => {
           _hover={{
             cursor: 'pointer',
           }}
+          onClick={() => modal.open(t('footer.info.conditions'), conditions)}
         >
-          {t('footer.info.terms')}
+          {t('footer.info.conditions')}
         </Text>
         <Text
           as="a"

@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/sale-conditions",
+      "handler": "sale-conditions.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/sale-conditions",
+      "handler": "sale-conditions.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/sale-conditions",
+      "handler": "sale-conditions.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
