@@ -7,8 +7,9 @@ import Header from '../components/Header';
 import OrderInfo from '../components/OrderInfo';
 import UserForm from '../components/UserForm';
 import Loader from '../components/Loader';
-import { getOffer } from '../util/apiCalls';
+import { getOffer, getSaleConditions } from '../util/apiCalls';
 import { sendOrderEmail } from '../util/email';
+import ReactMarkdown from 'react-markdown';
 
 const Checkout = () => {
   const location = useLocation();
@@ -18,8 +19,13 @@ const Checkout = () => {
   const modal = global['modal'];
 
   const [offer, setOffer] = useState();
+  const [conditions, setConditions] = useState('');
 
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    getSaleConditions().then(data => setConditions(data));
+  }, []);
 
   useEffect(() => {
     getOffer(id).then(data => setOffer(data));
@@ -65,6 +71,7 @@ const Checkout = () => {
                 departureOptions={offer.departure.split(' & ').map((i, idx) => {
                   return { name: i, value: idx };
                 })}
+                conditions={<ReactMarkdown>{conditions}</ReactMarkdown>}
               />
             ) : null}
           </Box>

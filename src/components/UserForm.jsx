@@ -130,10 +130,10 @@ const UserForm = props => {
             fontWeight="semibold"
             onClick={e => {
               e.stopPropagation();
-              modal.open(t('footer.info.terms'), props.terms);
+              modal.open(t('footer.info.conditions'), props.conditions);
             }}
           >
-            {t('checkout.info.terms')}
+            {t('checkout.info.conditions')}
           </Text>
         </Flex>
       </Checkbox>

@@ -12,6 +12,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { useTranslation } from 'react-i18next';
 import { getPrivacyPolicy, getSaleConditions } from '../util/apiCalls';
+import ReactMarkdown from 'react-markdown';
 
 const Footer = props => {
   const [t] = useTranslation('common');
@@ -24,7 +25,6 @@ const Footer = props => {
     getPrivacyPolicy().then(data => setPolicy(data));
     getSaleConditions().then(data => setConditions(data));
   }, []);
-
 
   return (
     <Flex
@@ -50,7 +50,12 @@ const Footer = props => {
           _hover={{
             cursor: 'pointer',
           }}
-          onClick={() => modal.open(t('footer.info.privacy'), policy)}
+          onClick={() =>
+            modal.open(
+              t('footer.info.privacy'),
+              <ReactMarkdown>{policy}</ReactMarkdown>
+            )
+          }
         >
           {t('footer.info.privacy')}
         </Text>
@@ -60,7 +65,12 @@ const Footer = props => {
           _hover={{
             cursor: 'pointer',
           }}
-          onClick={() => modal.open(t('footer.info.conditions'), conditions)}
+          onClick={() =>
+            modal.open(
+              t('footer.info.conditions'),
+              <ReactMarkdown>{conditions}</ReactMarkdown>
+            )
+          }
         >
           {t('footer.info.conditions')}
         </Text>
