@@ -16,7 +16,7 @@ const CarouselButton = props => {
       isRound
       aria-label={props.label}
       variant="ghost"
-      size="lg"
+      size={{ base: 'md', md: 'lg' }}
       fontSize="xl"
       zIndex="2"
       _hover={{
@@ -47,7 +47,12 @@ const SingleCarousel = props => {
   if (!props.images) return <Spinner size="xl" />;
 
   return (
-    <Flex dir="row" px="16px" justify="space-between" align="center">
+    <Flex
+      dir="row"
+      px={2}
+      justify="space-between"
+      align="center"
+    >
       <CarouselButton
         icon={faChevronLeft}
         label="left"

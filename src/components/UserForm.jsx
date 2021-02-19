@@ -122,11 +122,10 @@ const UserForm = props => {
         size="lg"
         iconColor="white"
       >
-        <Flex dir="row" color="black">
-          <Text fontSize="lg">{t('checkout.info.accept')}</Text>
+        <Text color="black" fontSize="lg">
+          {t('checkout.info.accept')}{' '}
           <Text
             as="button"
-            ml={1}
             fontWeight="semibold"
             onClick={e => {
               e.stopPropagation();
@@ -135,7 +134,7 @@ const UserForm = props => {
           >
             {t('checkout.info.conditions')}
           </Text>
-        </Flex>
+        </Text>
       </Checkbox>
       <Box
         as="button"

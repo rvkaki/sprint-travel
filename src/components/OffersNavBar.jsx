@@ -8,14 +8,15 @@ const OffersNavBar = props => {
     <Flex
       my={8}
       mx="auto"
+      direction={{ base: 'column', md: 'row' }}
       px={6}
       pb={6}
       pt={4}
-      w="50%"
+      w={{ base: '80%', md: '60%', lg: '50%' }}
       bg="gray.800"
       borderRadius="lg"
     >
-      <Box flex={2} mr={2}>
+      <Box flex={2} mr={{ base: 0, md: 2 }}>
         <SearchBar
           options={props.options}
           onChange={props.onChangeCategory}
@@ -25,7 +26,7 @@ const OffersNavBar = props => {
           label={t('search.label')}
         />
       </Box>
-      <Box flex={1} ml={2}>
+      <Box flex={1} ml={{ base: 0, md: 2 }}>
         <SearchBar
           options={props.sorters}
           value={props.sortBy}
