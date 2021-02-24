@@ -51,7 +51,7 @@ const Offer = () => {
             />
             <OfferInfo
               {...offer}
-              shareUrl={`${process.env.REACT_APP_SERVER_URL}/ofertas/${id}`}
+              shareUrl={window.location.href}
               checkout={() => history.push(`/checkout?offer=${id}`)}
             />
           </Flex>
