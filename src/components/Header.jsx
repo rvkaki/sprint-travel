@@ -6,6 +6,7 @@ import CustomDrawer from './CustomDrawer';
 import { Link, useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Menu from './Menu';
+import HelpDesk from './HelpDesk';
 
 const Header = props => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,13 +28,26 @@ const Header = props => {
           <Text ml={1} fontSize="xs" color="black">
             (+351) 963 720 279
           </Text>
-          <Box ml={1} h="16px" borderLeftWidth="2px" borderColor="black" />
-          <Text ml={1} fontSize="xs" color="black">
+          <Box
+            display={{ base: 'none', sm: 'inherit' }}
+            ml={1}
+            h="16px"
+            borderLeftWidth="2px"
+            borderColor="black"
+          />
+          <Text
+            display={{ base: 'none', sm: 'inherit' }}
+            ml={1}
+            fontSize="xs"
+            color="black"
+          >
             (+351) 253 043 471
           </Text>
         </Flex>
         <Flex align="center">
+          <HelpDesk />
           <Box
+            flex={1}
             as="a"
             href="https://www.facebook.com/sprinttravelviagens/"
             target="_blank"
@@ -43,9 +57,11 @@ const Header = props => {
               src="/assets/images/facebook_icon.webp"
               alt="facebook_icon"
               h="20px"
+              w="20px"
             />
           </Box>
           <Box
+            flex={1}
             ml={2}
             as="a"
             href="https://www.instagram.com/sprinttravelviagens/"
@@ -56,6 +72,7 @@ const Header = props => {
               src="/assets/images/instagram_icon.png"
               alt="instagram_icon"
               h="20px"
+              w="20px"
             />
           </Box>
         </Flex>
