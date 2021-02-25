@@ -77,7 +77,7 @@ const Franchising = props => {
         <Box position="relative" w="100%">
           <Box
             as="img"
-            src="assets/images/franchise_background.jpg"
+            src="assets/images/franchise_background.png"
             objectFit="cover"
             alt="background"
             h={{ base: '110vh', md: '94vh' }}

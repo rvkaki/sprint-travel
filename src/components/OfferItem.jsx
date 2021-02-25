@@ -80,6 +80,7 @@ const OfferItem = props => {
           color="white"
           textAlign="right"
         >
+          <Box as="span" fontSize="xl">{t('offer.from')}: </Box>
           {props.price}€
         </Text>
       </Flex>

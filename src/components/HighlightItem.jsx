@@ -1,8 +1,10 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const HighlightItem = props => {
   const [isHovered, setIsHovered] = useState(false);
+  const [t] = useTranslation('common');
 
   useEffect(() => {
     return () => {
@@ -51,6 +53,9 @@ const HighlightItem = props => {
           color="white"
           textAlign="right"
         >
+          <Box as="span" fontSize="xl">
+            {t('offer.from')}:{' '}
+          </Box>
           {props.price}€
         </Text>
       </Flex>
