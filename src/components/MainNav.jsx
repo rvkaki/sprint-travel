@@ -79,12 +79,12 @@ const NavButton = props => {
       dir="row"
       justify="center"
       align="center"
-      color="white"
+      color="#ddc4aa"
       _hover={{
         cursor: 'pointer',
-        bg: 'gray.300',
+        bg: '#ddc4aa',
         color: 'gray.800',
-        borderRadius: 'xl',
+        borderRadius: 'md',
       }}
     >
       <Box display={{ base: 'none', lg: 'inherit' }}>
@@ -118,6 +118,7 @@ const MainNav = props => {
         w="90%"
         h={{ base: 64, lg: 32 }}
         bg="gray.800"
+        border="6px solid #ddc4aa"
         borderRadius="xl"
         shadow="2xl"
         flexWrap="wrap"
