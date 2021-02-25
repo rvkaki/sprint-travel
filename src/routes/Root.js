@@ -1,5 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from 'react-router-dom';
 import Checkout from '../views/Checkout';
 import Contacts from '../views/Contacts';
 import Franchising from '../views/Franchising';
@@ -11,6 +16,9 @@ const Root = () => {
   return (
     <Router>
       <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
         <Route exact path="/ofertas">
           <Offers />
         </Route>
@@ -26,8 +34,8 @@ const Root = () => {
         <Route exact path="/checkout">
           <Checkout />
         </Route>
-        <Route path="/">
-          <Home />
+        <Route>
+          <Redirect to="/" />
         </Route>
       </Switch>
     </Router>
