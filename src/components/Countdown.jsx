@@ -5,12 +5,7 @@ import { useTranslation } from 'react-i18next';
 const Countdown = props => {
   const [t] = useTranslation('common');
 
-  const deadline = props.deadline;
   const [timeUntil, setTimeUntil] = useState(null);
-
-  const getTimeUntil = () => {
-    return deadline.getTime() - new Date().getTime();
-  };
 
   const format = time => {
     return (
@@ -24,6 +19,9 @@ const Countdown = props => {
   };
 
   useEffect(() => {
+    const getTimeUntil = () => {
+      return props.deadline.getTime() - new Date().getTime();
+    };
     const interval = setInterval(() => {
       const t = getTimeUntil();
       setTimeUntil(t);
@@ -32,7 +30,7 @@ const Countdown = props => {
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [props.deadline]);
 
   return (
     <Flex dir="row" px={4} align="center">
