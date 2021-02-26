@@ -83,6 +83,7 @@
     "duration": "Duration"
   },
   "all": "All",
+  "others": "Others",
   "checkout": {
     "info": {
       "label": "Identification",

@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "offer_groups",
   "info": {
-    "name": "Grupos de Ofertas",
+    "name": "Categorias",
     "description": ""
   },
   "options": {
@@ -11,9 +11,6 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "ofertas": {
-      "collection": "offer"
-    },
     "title": {
       "type": "string",
       "required": true

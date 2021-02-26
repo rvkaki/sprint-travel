@@ -2,14 +2,9 @@ import axios from 'axios';
 
 const serverURL = process.env.REACT_APP_SERVER_URL;
 
-export const getOfferGroups = async (categoryId = -1) => {
-  let params = {};
-  if (categoryId !== -1) params['id'] = categoryId;
-
+export const getOfferGroups = async () => {
   try {
-    const res = await axios.get(`${serverURL}/offer-groups`, {
-      params: params,
-    });
+    const res = await axios.get(`${serverURL}/offer-groups`);
     if (res.statusText === 'OK') return res.data;
     return [];
   } catch (error) {

@@ -7,6 +7,7 @@ import Header from '../components/Header';
 import OfferGroup from '../components/OfferGroup';
 import OffersNavBar from '../components/OffersNavBar';
 import { getOfferGroups, getOffers } from '../util/apiCalls';
+import _ from 'lodash';
 
 const Offers = () => {
   const [t] = useTranslation('common');
@@ -40,22 +41,24 @@ const Offers = () => {
   }, [t]);
 
   useEffect(() => {
-    getOfferGroups(categoryId).then(data => setOfferGroups(data));
-  }, [categoryId]);
-
-  useEffect(() => {
-    if (sortBy !== '')
-      getOffers(sortBy).then(data => {
+    console.log(sortBy, categoryId);
+    getOffers(sortBy).then(data => {
+      if (sortBy !== '')
         if (categoryId !== -1) {
-          setOffers(
-            data.filter(
-              o => offerGroups[0].ofertas.findIndex(x => x.id === o.id) !== -1
-            )
-          );
+          setOffers(data.filter(o => o.categoria.id === categoryId));
         } else setOffers(data);
-      });
-    else setOffers([]);
-  }, [sortBy, categoryId, offerGroups]);
+      else {
+        if (categoryId !== -1)
+          setOffers(data.filter(o => o.categoria.id === categoryId));
+        else {
+          setOfferGroups(_.groupBy(data, 'categoria.title'));
+          setOffers([]);
+        }
+      }
+    });
+  }, [sortBy, categoryId]);
+
+  console.log(offerGroups);
 
   return (
     <Box>
@@ -83,8 +86,12 @@ const Offers = () => {
           </Box>
         ) : (
           <Stack spacing={16} my={8} mx={4}>
-            {offerGroups.map(group => (
-              <OfferGroup {...group} history={history} />
+            {Object.entries(offerGroups).map(([title, offers]) => (
+              <OfferGroup
+                title={title !== "undefined" ? title : t('others')}
+                ofertas={offers}
+                history={history}
+              />
             ))}
           </Stack>
         )}

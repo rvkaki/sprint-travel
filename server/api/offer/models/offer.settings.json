@@ -80,6 +80,9 @@
         "TI",
         "APA"
       ]
+    },
+    "categoria": {
+      "model": "offer-groups"
     }
   }
 }
