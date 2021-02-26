@@ -1,10 +1,15 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import Countdown from './Countdown';
 
 const OfferItem = props => {
   const [t] = useTranslation('common');
   const [isHovered, setIsHovered] = useState(false);
+
+  const tomorrow = new Date();
+  tomorrow.setDate(new Date().getDate() + 2);
+
   return (
     <Box
       w="30%"
@@ -80,10 +85,24 @@ const OfferItem = props => {
           color="white"
           textAlign="right"
         >
-          <Box as="span" fontSize="xl">{t('offer.from')}: </Box>
+          <Box as="span" fontSize="xl">
+            {t('offer.from')}:{' '}
+          </Box>
           {props.price}€
         </Text>
       </Flex>
+      {tomorrow.getTime() > new Date(props.validUntil).getTime() ? (
+        <Box
+          position="absolute"
+          left={0}
+          top={0}
+          right={0}
+          bg="rgba(0,0,0,0.7)"
+          color="white"
+        >
+          <Countdown deadline={new Date(props.validUntil)} />
+        </Box>
+      ) : null}
     </Box>
   );
 };

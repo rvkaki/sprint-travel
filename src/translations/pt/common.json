@@ -84,6 +84,7 @@
   },
   "all": "Todos",
   "others": "Outros",
+  "expiresIn": "Termina em:",
   "checkout": {
     "info": {
       "label": "Informação",

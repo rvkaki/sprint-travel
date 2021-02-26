@@ -84,6 +84,7 @@
   },
   "all": "All",
   "others": "Others",
+  "expiresIn": "Expires in:",
   "checkout": {
     "info": {
       "label": "Identification",

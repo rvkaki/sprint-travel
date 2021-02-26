@@ -41,7 +41,6 @@ const Offers = () => {
   }, [t]);
 
   useEffect(() => {
-    console.log(sortBy, categoryId);
     getOffers(sortBy).then(data => {
       if (sortBy !== '')
         if (categoryId !== -1) {
@@ -61,8 +60,6 @@ const Offers = () => {
       }
     });
   }, [sortBy, categoryId]);
-
-  console.log(offerGroups);
 
   return (
     <Box>

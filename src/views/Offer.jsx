@@ -1,6 +1,7 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { useHistory, useLocation, useParams } from 'react-router-dom';
+import Countdown from '../components/Countdown';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import MediaContainer from '../components/MediaContainer';
@@ -14,6 +15,9 @@ const Offer = () => {
 
   const [offer, setOffer] = useState();
 
+  const tomorrow = new Date();
+  tomorrow.setDate(new Date().getDate() + 2);
+
   useEffect(() => {
     if (state) setOffer(state);
     else getOffer(id).then(data => setOffer(data));
@@ -26,6 +30,11 @@ const Offer = () => {
       <Box minH="100vh">
         <Header />
         <Box px={8} py={4} h="100%">
+          {tomorrow.getTime() > new Date(offer.validUntil).getTime() ? (
+            <Box w="100%" py={2} bg="gray.800" color="white" fontSize="lg">
+              <Countdown deadline={new Date(offer.validUntil)} />
+            </Box>
+          ) : null}
           <Text
             fontSize={{ base: '2xl', md: '4xl' }}
             fontWeight="bold"
