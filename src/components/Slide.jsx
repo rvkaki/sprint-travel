@@ -18,8 +18,9 @@ const Slide = props => {
         w="100%"
         h="30%"
         bg="#EEEEEECC"
+        direction="column"
         align="center"
-        justify="center"
+        justify="space-around"
       >
         <Text
           fontSize={{ base: 'xl', sm: '2xl', md: '4xl' }}
@@ -28,6 +29,11 @@ const Slide = props => {
         >
           {props.title}
         </Text>
+        {props.info ? (
+          <Text fontSize={{ base: 'md', sm: 'xl', md: '2xl' }} color="black">
+            {props.info}
+          </Text>
+        ) : null}
       </Flex>
     </Box>
   );

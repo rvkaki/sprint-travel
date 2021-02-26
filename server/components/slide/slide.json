@@ -2,7 +2,8 @@
   "collectionName": "components_slide_slides",
   "info": {
     "name": "Slide",
-    "icon": "image"
+    "icon": "image",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -19,6 +20,9 @@
     },
     "title": {
       "type": "string"
+    },
+    "info": {
+      "type": "text"
     }
   }
 }

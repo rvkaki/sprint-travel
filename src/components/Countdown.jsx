@@ -9,6 +9,8 @@ const Countdown = props => {
 
   const format = time => {
     return (
+      time.getUTCDate() +
+      'd' +
       time.getUTCHours() +
       'h' +
       time.getUTCMinutes() +
@@ -20,7 +22,9 @@ const Countdown = props => {
 
   useEffect(() => {
     const getTimeUntil = () => {
-      return props.deadline.getTime() - new Date().getTime();
+      return (
+        props.deadline.getTime() - new Date().getTime()
+      );
     };
     const interval = setInterval(() => {
       const t = getTimeUntil();

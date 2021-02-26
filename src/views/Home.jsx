@@ -40,6 +40,7 @@ const Home = () => {
                       src={`${process.env.REACT_APP_SERVER_URL}${i.image.url}`}
                       alt={i.image.name}
                       title={i.title}
+                      info={i.info}
                     />
                   ))}
                 />
@@ -51,6 +52,7 @@ const Home = () => {
                       src: `${process.env.REACT_APP_SERVER_URL}${i.image.url}`,
                       alt: i.image.name,
                       title: i.title,
+                      info: i.info,
                     };
                   })}
                 />
