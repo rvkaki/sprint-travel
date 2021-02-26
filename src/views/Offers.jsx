@@ -45,11 +45,15 @@ const Offers = () => {
     getOffers(sortBy).then(data => {
       if (sortBy !== '')
         if (categoryId !== -1) {
-          setOffers(data.filter(o => o.categoria.id === categoryId));
+          setOffers(
+            data.filter(o => o.categoria && o.categoria.id === categoryId)
+          );
         } else setOffers(data);
       else {
         if (categoryId !== -1)
-          setOffers(data.filter(o => o.categoria.id === categoryId));
+          setOffers(
+            data.filter(o => o.categoria && o.categoria.id === categoryId)
+          );
         else {
           setOfferGroups(_.groupBy(data, 'categoria.title'));
           setOffers([]);
@@ -88,7 +92,7 @@ const Offers = () => {
           <Stack spacing={16} my={8} mx={4}>
             {Object.entries(offerGroups).map(([title, offers]) => (
               <OfferGroup
-                title={title !== "undefined" ? title : t('others')}
+                title={title !== 'undefined' ? title : t('others')}
                 ofertas={offers}
                 history={history}
               />
