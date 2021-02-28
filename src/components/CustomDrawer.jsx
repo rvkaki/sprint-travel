@@ -59,7 +59,7 @@ const CustomDrawer = props => {
                 <Stack ml={3} spacing={1}>
                   <Text
                     as="a"
-                    href="https://www.sprinttravelrentacar.com"
+                    href="https://www.sprinttravelrentacar.com/frota"
                     target="_blank"
                     fontSize="md"
                   >
@@ -75,7 +75,7 @@ const CustomDrawer = props => {
                   </Text>
                   <Text
                     as="a"
-                    href="https://beta.sprintsolucoesinformaticas.com/admin/login"
+                    href="https://rentacar.filipeamorim.com/admin/"
                     target="_blank"
                     fontSize="md"
                   >
