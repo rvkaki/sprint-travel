@@ -9,6 +9,7 @@ export const getOfferGroups = async () => {
     return [];
   } catch (error) {
     console.error(error);
+    return [];
   }
 };
 
@@ -21,6 +22,7 @@ export const getOffers = async (sortBy = '') => {
     return [];
   } catch (error) {
     console.error(error);
+    return [];
   }
 };
 
@@ -31,6 +33,7 @@ export const getOffer = async id => {
     return [];
   } catch (error) {
     console.error(error);
+    return [];
   }
 };
 
@@ -41,6 +44,7 @@ export const getSlides = async () => {
     return [];
   } catch (error) {
     console.error(error);
+    return [];
   }
 };
 
@@ -50,6 +54,7 @@ export const getFranchisingBook = async () => {
     if (res.statusText === 'OK') return res.data.file;
   } catch (error) {
     console.log(error);
+    return [];
   }
 };
 
@@ -60,6 +65,7 @@ export const getHighlights = async () => {
     return [];
   } catch (error) {
     console.error(error);
+    return [];
   }
 };
 
@@ -70,6 +76,7 @@ export const getLocations = async () => {
     return [];
   } catch (error) {
     console.error(error);
+    return [];
   }
 };
 
@@ -80,6 +87,7 @@ export const getPrivacyPolicy = async () => {
     return '';
   } catch (error) {
     console.error(error);
+    return [];
   }
 };
 
@@ -90,5 +98,6 @@ export const getSaleConditions = async () => {
     return '';
   } catch (error) {
     console.error(error);
+    return [];
   }
 };

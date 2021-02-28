@@ -142,12 +142,6 @@ const Header = props => {
                     'https://www.rentalcars.com/Home.do?affiliateCode=sprinttra667',
                   target: '_blank',
                 },
-                {
-                  label: t('rent.login'),
-                  link:
-                    'https://rentacar.filipeamorim.com/admin/',
-                  target: '_blank',
-                },
               ]}
             />
             <Link to="/ofertas">

@@ -73,14 +73,6 @@ const CustomDrawer = props => {
                   >
                     {t('rent.international')}
                   </Text>
-                  <Text
-                    as="a"
-                    href="https://rentacar.filipeamorim.com/admin/"
-                    target="_blank"
-                    fontSize="md"
-                  >
-                    {t('rent.login')}
-                  </Text>
                 </Stack>
               </Box>
               <Link to="/ofertas">

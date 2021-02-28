@@ -35,7 +35,6 @@ const Checkout = () => {
     setLoading(true);
     sendOrderEmail(name, email, contact, departure, date, offer)
       .then(res => {
-        console.log(res);
         setLoading(false);
         if (res.ok)
           modal.open(t('checkout.order.requested'), t('checkout.order.text'));
@@ -46,7 +45,6 @@ const Checkout = () => {
           );
       })
       .catch(error => {
-        console.log(error);
         modal.open(
           t('checkout.order.error.label'),
           t('checkout.order.error.text') + 'geral@sprinttravelviagens.com'

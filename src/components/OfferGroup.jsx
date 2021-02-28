@@ -2,7 +2,6 @@ import { Box, Flex, Text } from '@chakra-ui/react';
 import OfferItem from './OfferItem';
 
 const OfferGroup = props => {
-  console.log(props);
   return (
     <Box>
       <Text mx={4} fontSize="xl" fontWeight="semibold">
