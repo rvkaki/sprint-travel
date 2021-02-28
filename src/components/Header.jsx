@@ -124,26 +124,14 @@ const Header = props => {
                 },
               ]}
             />
-            <Menu
-              label={
-                <Text as="button" fontSize="md">
-                  {t('header.rent')}
-                </Text>
-              }
-              items={[
-                {
-                  label: t('rent.national'),
-                  link: 'https://www.sprinttravelrentacar.com',
-                  target: '_blank',
-                },
-                {
-                  label: t('rent.international'),
-                  link:
-                    'https://www.rentalcars.com/Home.do?affiliateCode=sprinttra667',
-                  target: '_blank',
-                },
-              ]}
-            />
+            <Text
+              as="a"
+              href="https://www.sprinttravelrentacar.com"
+              target="_blank"
+              fontSize="md"
+            >
+              {t('header.rent')}
+            </Text>
             <Link to="/ofertas">
               <Text fontSize="md">{t('header.travel')}</Text>
             </Link>

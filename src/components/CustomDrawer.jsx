@@ -52,29 +52,15 @@ const CustomDrawer = props => {
                   </Text>
                 </Stack>
               </Box>
-              <Box>
-                <Text fontSize="xl" fontWeight="semibold">
-                  {t('header.rent')}
-                </Text>
-                <Stack ml={3} spacing={1}>
-                  <Text
-                    as="a"
-                    href="https://www.sprinttravelrentacar.com"
-                    target="_blank"
-                    fontSize="md"
-                  >
-                    {t('rent.national')}
-                  </Text>
-                  <Text
-                    as="a"
-                    href="https://www.rentalcars.com/Home.do?affiliateCode=sprinttra667"
-                    target="_blank"
-                    fontSize="md"
-                  >
-                    {t('rent.international')}
-                  </Text>
-                </Stack>
-              </Box>
+              <Text
+                as="a"
+                href="https://www.sprinttravelrentacar.com"
+                target="_blank"
+                fontSize="xl"
+                fontWeight="semibold"
+              >
+                {t('header.rent')}
+              </Text>
               <Link to="/ofertas">
                 <Text fontSize="xl" fontWeight="semibold">
                   {t('header.travel')}
