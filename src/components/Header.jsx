@@ -133,7 +133,7 @@ const Header = props => {
               items={[
                 {
                   label: t('rent.national'),
-                  link: 'https://www.sprinttravelrentacar.com/frota',
+                  link: 'https://www.sprinttravelrentacar.com',
                   target: '_blank',
                 },
                 {
