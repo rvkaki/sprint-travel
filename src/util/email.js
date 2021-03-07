@@ -48,7 +48,7 @@ ${message}`;
     body: JSON.stringify({
       options: {
         to: 'franchising@sprinttravelviagens.com',
-        from: 'geral@sprinttravelviagens.com',
+        from: 'franchising@sprinttravelviagens.com',
         subject: `Franchising: ${subject}`,
         text: messageBody,
       },
@@ -65,9 +65,9 @@ export const sendNumberEmail = async number => {
     method: 'POST',
     body: JSON.stringify({
       options: {
-        to: 'antoniocarvalho@sprinttravelviagens.com',
+        to: 'geral@sprinttravelviagens.com',
         from: 'geral@sprinttravelviagens.com',
-        subject: `Pedido de contacto Rent a Car`,
+        subject: `Pedido de contacto Viagens`,
         text: messageBody,
       },
     }),

@@ -14,7 +14,8 @@
         "https://www.sprinttravelviagens.com",
         "https://sprinttravelviagens.com",
         "https://www.sprinttravelviagens.pt",
-        "https://sprinttravelviagens.pt"
+        "https://sprinttravelviagens.pt",
+        "*"
       ]
     }
   }
