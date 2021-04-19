@@ -27,9 +27,11 @@ const Offers = () => {
     getOfferGroups().then(data =>
       setOptions([
         { name: t('all'), value: -1 },
-        ...data.map(o => {
-          return { name: o.title, value: o.id };
-        }),
+        ...data
+          .sort((o1, o2) => (o2.title > o1.title ? -1 : 1))
+          .map(o => {
+            return { name: o.title, value: o.id };
+          }),
       ])
     );
     setSorters([
@@ -83,17 +85,21 @@ const Offers = () => {
               }
               ofertas={offers}
               history={history}
+              size={0}
             />
           </Box>
         ) : (
           <Stack spacing={16} my={8} mx={4}>
-            {Object.entries(offerGroups).map(([title, offers]) => (
-              <OfferGroup
-                title={title !== 'undefined' ? title : t('others')}
-                ofertas={offers}
-                history={history}
-              />
-            ))}
+            {Object.entries(offerGroups)
+              .sort((o1, o2) => (o2[0] > o1[0] ? -1 : 1))
+              .map(([title, offers]) => (
+                <OfferGroup
+                  title={title !== 'undefined' ? title : t('others')}
+                  ofertas={offers}
+                  history={history}
+                  size={3}
+                />
+              ))}
           </Stack>
         )}
       </Box>
