@@ -11,7 +11,7 @@ const OfferGroup = props => {
       <Text mx={4} fontSize="xl" fontWeight="semibold">
         {props.title}
       </Text>
-      <Flex direction="row" flexWrap="wrap" align="center">
+      <Flex direction="row" flexWrap="wrap" align="center" w="100%">
         {props.ofertas.slice(0, size).map(offer => (
           <OfferItem
             {...offer}
