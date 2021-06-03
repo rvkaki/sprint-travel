@@ -12,7 +12,9 @@ const Contacts = () => {
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
-    getLocations().then(data => setLocations(data));
+    getLocations().then(data =>
+      setLocations(data.sort((l1, l2) => (l2.title > l1.title ? -1 : 1)))
+    );
   }, []);
 
   return (
