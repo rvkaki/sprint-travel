@@ -45,7 +45,7 @@ const UserForm = props => {
         name,
         email,
         contact,
-        props.departureOptions.find(x => x.value === departure).name,
+        props.departureOptions.find(x => x.value === departure)?.name || '',
         departureDate
       );
     } else alert('Por favor preencha todos os campos');
@@ -99,20 +99,26 @@ const UserForm = props => {
           </Text>
           <Datepicker
             date={departureDate}
-            minBookingDate={props.minBookingDate}
+            minBookingDate={
+              props.minBookingDate.getTime() < new Date().getTime()
+                ? new Date()
+                : props.minBookingDate
+            }
             onDateChange={newDate => setDepartureDate(newDate.startDate)}
           />
         </Stack>
-        <Box w={{ base: '100%', sm: 'auto' }}>
-          <SearchBar
-            options={props.departureOptions}
-            value={departure}
-            onChange={value => setDeparture(value)}
-            placeholder={t('checkout.info.location')}
-            color="gray.800"
-            label={t('checkout.info.location')}
-          />
-        </Box>
+        {props.departureOptions.length > 0 && (
+          <Box w={{ base: '100%', sm: 'auto' }}>
+            <SearchBar
+              options={props.departureOptions}
+              value={departure}
+              onChange={value => setDeparture(value)}
+              placeholder={t('checkout.info.location')}
+              color="gray.800"
+              label={t('checkout.info.location')}
+            />
+          </Box>
+        )}
       </Flex>
       <Checkbox
         isRequired

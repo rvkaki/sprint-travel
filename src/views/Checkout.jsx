@@ -66,9 +66,11 @@ const Checkout = () => {
               <UserForm
                 submit={submit}
                 minBookingDate={new Date(offer.startDate)}
-                departureOptions={offer.departure.split(' & ').map((i, idx) => {
-                  return { name: i, value: idx };
-                })}
+                departureOptions={
+                  offer.departure?.split(' & ').map((i, idx) => {
+                    return { name: i, value: idx };
+                  }) || []
+                }
                 conditions={<ReactMarkdown>{conditions}</ReactMarkdown>}
               />
             ) : null}
