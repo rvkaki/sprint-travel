@@ -96,7 +96,8 @@
       "request": "Fazer o pedido",
       "confirmation": "Sujeito a confirmação",
       "date": "Data de Partida",
-      "location": "Local de Partida"
+      "location": "Local de Partida",
+      "store": "Local do Balcão"
     },
     "order": {
       "label": "A sua reserva",

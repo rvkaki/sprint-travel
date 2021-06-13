@@ -4,6 +4,7 @@ export const sendOrderEmail = async (
   contact,
   departure,
   date,
+  storeEmail,
   offer
 ) => {
   const messageBody = `Nome: ${name}
@@ -18,7 +19,8 @@ Total: ${offer.price}€`;
     method: 'POST',
     body: JSON.stringify({
       options: {
-        to: 'geral@sprinttravelviagens.com',
+        to: storeEmail || 'geral@sprinttravelviagens.com',
+        cc: 'geral@sprinttravelviagens.com',
         from: 'geral@sprinttravelviagens.com',
         subject: 'Pedido de Reserva',
         text: messageBody,

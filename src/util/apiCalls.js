@@ -101,3 +101,14 @@ export const getSaleConditions = async () => {
     return [];
   }
 };
+
+export const getStores = async () => {
+  try {
+    const res = await axios.get(`${serverURL}/stores`);
+    if (res.statusText === 'OK') return res.data;
+    return [];
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+};

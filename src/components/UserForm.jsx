@@ -6,6 +6,7 @@ import {
   FormControl,
   FormLabel,
   Input,
+  Select,
   Stack,
   Text,
 } from '@chakra-ui/react';
@@ -22,6 +23,7 @@ const UserForm = props => {
   const [contact, setContact] = useState();
   const [departure, setDeparture] = useState(-1);
   const [departureDate, setDepartureDate] = useState();
+  const [storeId, setStoreId] = useState(-1);
   const [checked, setChecked] = useState(false);
 
   const modal = global['modal'];
@@ -46,7 +48,8 @@ const UserForm = props => {
         email,
         contact,
         props.departureOptions.find(x => x.value === departure)?.name || '',
-        departureDate
+        departureDate,
+        props.storeOptions.find(x => x.id === parseInt(storeId))?.email
       );
     } else alert('Por favor preencha todos os campos');
   };
@@ -108,7 +111,7 @@ const UserForm = props => {
           />
         </Stack>
         {props.departureOptions.length > 0 && (
-          <Box w={{ base: '100%', sm: 'auto' }}>
+          <Box w={{ base: '100%', sm: 'auto' }} mb={{ base: 6, sm: 0 }}>
             <SearchBar
               options={props.departureOptions}
               value={departure}
@@ -118,6 +121,24 @@ const UserForm = props => {
               label={t('checkout.info.location')}
             />
           </Box>
+        )}
+        {props.storeOptions.length > 0 && (
+          <Stack spacing={1} w={{ base: '100%', sm: 'auto' }}>
+            <Text color="gray.800" fontWeight="medium">
+              {t('checkout.info.store')}
+            </Text>
+            <Select
+              value={storeId}
+              onChange={e => setStoreId(e.target.value)}
+              borderColor="gray.500"
+            >
+              {props.storeOptions.map(s => (
+                <option key={s.id} value={s.id}>
+                  {s.name}
+                </option>
+              ))}
+            </Select>
+          </Stack>
         )}
       </Flex>
       <Checkbox

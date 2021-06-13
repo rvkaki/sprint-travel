@@ -7,7 +7,7 @@ import Header from '../components/Header';
 import OrderInfo from '../components/OrderInfo';
 import UserForm from '../components/UserForm';
 import Loader from '../components/Loader';
-import { getOffer, getSaleConditions } from '../util/apiCalls';
+import { getOffer, getSaleConditions, getStores } from '../util/apiCalls';
 import { sendOrderEmail } from '../util/email';
 import ReactMarkdown from 'react-markdown';
 
@@ -20,20 +20,22 @@ const Checkout = () => {
 
   const [offer, setOffer] = useState();
   const [conditions, setConditions] = useState('');
+  const [stores, setStores] = useState([]);
 
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     getSaleConditions().then(data => setConditions(data));
+    getStores().then(data => setStores(data));
   }, []);
 
   useEffect(() => {
     getOffer(id).then(data => setOffer(data));
   }, [id]);
 
-  const submit = (name, email, contact, departure, date) => {
+  const submit = (name, email, contact, departure, date, storeEmail) => {
     setLoading(true);
-    sendOrderEmail(name, email, contact, departure, date, offer)
+    sendOrderEmail(name, email, contact, departure, date, storeEmail, offer)
       .then(res => {
         setLoading(false);
         if (res.ok)
@@ -71,6 +73,7 @@ const Checkout = () => {
                     return { name: i, value: idx };
                   }) || []
                 }
+                storeOptions={stores}
                 conditions={<ReactMarkdown>{conditions}</ReactMarkdown>}
               />
             ) : null}

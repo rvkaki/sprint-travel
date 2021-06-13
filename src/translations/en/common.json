@@ -96,7 +96,8 @@
       "request": "Request",
       "confirmation": "Subject to confirmation",
       "date": "Departure Date",
-      "location": "Departure Location"
+      "location": "Departure Location",
+      "store": "Store Location"
     },
     "order": {
       "label": "Your order",
