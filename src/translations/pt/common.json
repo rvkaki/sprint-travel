@@ -97,7 +97,7 @@
       "confirmation": "Sujeito a confirmação",
       "date": "Data de Partida",
       "location": "Local de Partida",
-      "store": "Local do Balcão"
+      "store": "Selecionar Balcão"
     },
     "order": {
       "label": "A sua reserva",
